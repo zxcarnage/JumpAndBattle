@@ -1,7 +1,19 @@
-﻿namespace Ecs.Core.Installers
+﻿using Scellecs.Morpeh;
+using Zenject;
+
+namespace Ecs.Core.Installers
 {
-    public class GameEcsInstaller
+    public class GameEcsInstaller : MonoInstaller
     {
-        
+        public override void InstallBindings()
+        {
+            var world = World.Default;
+
+            Container.Bind<World>()
+                .FromInstance(world)
+                .AsSingle();
+            
+			GameEcsSystems.Install(Container);
+        }
     }
 }
