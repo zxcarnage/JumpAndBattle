@@ -1,4 +1,5 @@
-﻿using Scellecs.Morpeh;
+﻿using Ecs.Core.Utils;
+using Scellecs.Morpeh;
 using Zenject;
 
 namespace Ecs.Core.Installers
@@ -12,8 +13,10 @@ namespace Ecs.Core.Installers
             Container.Bind<World>()
                 .FromInstance(world)
                 .AsSingle();
+
+            GameEcsSystems.Install(Container);
             
-			GameEcsSystems.Install(Container);
+            Container.BindInterfacesAndSelfTo<Bootstrap>().AsSingle().NonLazy();
         }
     }
 }
