@@ -1096,6 +1096,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].Delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].Delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].Delay
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].SpawnSpeed
       value: 2
       objectReference: {fileID: 0}

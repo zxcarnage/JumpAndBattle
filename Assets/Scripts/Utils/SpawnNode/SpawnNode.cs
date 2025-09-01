@@ -3,13 +3,13 @@
     [System.Serializable]
     public sealed class SpawnNode
     {
-        private SpawnNodeData _spawnNodeData;
-        
+        public SpawnNodeData SpawnNodeData { get; private set; }
+
         public SpawnNode NextNode;
 
         public SpawnNode(SpawnNodeData spawnNodeData)
         {
-            _spawnNodeData = spawnNodeData;
+            SpawnNodeData = spawnNodeData;
         }
     }
 }

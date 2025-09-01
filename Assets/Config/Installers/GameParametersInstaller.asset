@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: GameParametersInstaller
   m_EditorClassIdentifier: 
   _prefabsBase: {fileID: 11400000, guid: 63d44e0de3a08114e987d822ab334f2a, type: 2}
+  _enemyBase: {fileID: 11400000, guid: 968d43518b0ad2340adc84aafc496883, type: 2}
   _playerBasicParameters: {fileID: 11400000, guid: 30910c5899eae2347995bb9bc572e0a8, type: 2}

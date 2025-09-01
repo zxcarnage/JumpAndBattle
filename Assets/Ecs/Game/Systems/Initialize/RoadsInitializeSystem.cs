@@ -1,4 +1,5 @@
 ﻿using Ecs.Game.Components.Roads;
+using Ecs.Game.Components.Timer;
 using Ecs.Generated.Components;
 using Scellecs.Morpeh;
 using Utils.Providers.GameField;
@@ -32,6 +33,8 @@ namespace Ecs.Game.Systems.Initialize
 
                 var roadEntity = World.CreateEntity();
                 roadEntity.AddSpawnNodeComponent(new SpawnNodeComponent(){ Value = spawnNode, });
+
+                roadEntity.AddTimerComponent(new TimerComponent() { Value = 0f, });
                 
                 previousNode = spawnNode;
             }

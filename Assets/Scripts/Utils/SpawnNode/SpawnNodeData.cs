@@ -6,7 +6,7 @@ namespace Utils.SpawnNode
     public struct SpawnNodeData
     {
         public Transform SpawnPosition;
-        public float SpawnSpeed;
+        public float Delay;
         public float MovementSpeed;
     }
 }

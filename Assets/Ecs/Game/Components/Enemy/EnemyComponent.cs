@@ -2,12 +2,12 @@
 using Ecs.Core.Utils.CodeGenerator;
 using Scellecs.Morpeh;
 
-namespace Ecs.Game.Components.Timer
+namespace Ecs.Game.Components.Enemy
 {
     [Serializable]
     [Generate]
-    public struct TimerComponent : IComponent
+    public struct EnemyComponent : IComponent
     {
-        public float Value;
+        
     }
 }
