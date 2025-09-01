@@ -1,5 +1,6 @@
 ﻿using Db.Base;
 using Db.Player;
+using Ecs.Generated.Components;
 using Game.Services.Factory.Player;
 using Scellecs.Morpeh;
 using Unity.IL2CPP.CompilerServices;
@@ -36,11 +37,22 @@ namespace Ecs.Game.Systems.Initialize
         {
             var playerView = _prefabsBase.Get("Player");
 
-            _playerFactory.CreatePlayer(
+            var playerEntity = _playerFactory.CreatePlayer(
                 playerView,
                 _gameFieldProvider.GameField.PlayerSpawnPoint.position,
                 _playerBasicParameters.Health
             );
+
+            InitCamera();
+
+            return;
+
+            void InitCamera()
+            {
+                var playerTransform = playerEntity.GetTransformComponent().Value;
+                _gameFieldProvider.GameField.PlayerCamera.Follow = playerTransform;
+                _gameFieldProvider.GameField.PlayerCamera.LookAt = playerTransform;
+            }
         }
         
         public void Dispose()

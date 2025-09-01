@@ -1,4 +1,5 @@
 ﻿using Ecs.Game.Components.Character;
+using Ecs.Game.Components.Player;
 using Ecs.Generated.Components;
 using Game.Views.Player;
 using Scellecs.Morpeh;
@@ -27,6 +28,8 @@ namespace Game.Services.Factory.Player.Impl
                 .GetComponent<PlayerView>();;
 
             var playerEntity = _world.CreateEntity();
+
+            playerEntity.AddPlayerComponent(new PlayerComponent());
 
             playerEntity.SetColliderComponent(
                 new ColliderComponent()

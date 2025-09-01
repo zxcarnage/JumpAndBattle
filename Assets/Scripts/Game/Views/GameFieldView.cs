@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 namespace Game.Views
 {
@@ -6,5 +7,8 @@ namespace Game.Views
     {
         [field: SerializeField]
         public Transform PlayerSpawnPoint { get; private set; }
+
+        [field: SerializeField]
+        public CinemachineVirtualCamera PlayerCamera { get; private set; }
     }
 }
