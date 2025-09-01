@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Utils.PrefabMatrix
+namespace Utils.PrefabMatrix
 {
     public interface IPrefabMatrix<T>
     {

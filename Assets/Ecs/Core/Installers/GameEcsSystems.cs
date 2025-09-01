@@ -18,6 +18,7 @@ namespace Ecs.Core.Installers
         {
             container.BindInterfacesAndSelfTo<InputInitializeSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<PlayerInitializeSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<RoadsInitializeSystem>().AsSingle();
         }
 
         private static void High(DiContainer container)

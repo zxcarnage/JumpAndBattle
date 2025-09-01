@@ -1,7 +1,7 @@
 ﻿using Game.Views.Enemy;
 using UnityEngine;
 
-namespace Game.Utils.PrefabMatrix
+namespace Utils.PrefabMatrix
 {
     public static class PrefabMatrixUtils
     {

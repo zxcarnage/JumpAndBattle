@@ -1,6 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 
-namespace Game.Utils.PrefabMatrix
+namespace Utils.PrefabMatrix
 {
     public class PrefabMatrixAttribute : TableMatrixAttribute
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.Views.Enemy;
 
-namespace Game.Utils.Enemy
+namespace Utils.Enemy
 {
     [Serializable]
     public sealed class EnemyTypeInfo : IReadOnlyList<EnemyView>
