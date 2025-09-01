@@ -1,4 +1,7 @@
-﻿using Zenject;
+﻿using Ecs.Game.Systems.Initialize;
+using Ecs.Game.Systems.Input;
+using Ecs.Game.Systems.Movement;
+using Zenject;
 
 namespace Ecs.Core.Installers
 {
@@ -13,17 +16,18 @@ namespace Ecs.Core.Installers
 
         private static void Urgent(DiContainer container)
         {
-            
+            container.BindInterfacesAndSelfTo<InputInitializeSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<PlayerInitializeSystem>().AsSingle();
         }
 
         private static void High(DiContainer container)
         {
-            
+            container.BindInterfacesAndSelfTo<KeyboardInputSystem>().AsSingle();
         }
 
         private static void Normal(DiContainer container)
         {
-            
+            container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)

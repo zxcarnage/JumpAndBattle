@@ -6,5 +6,9 @@ namespace Db.Player.Impl
     {
         [field: SerializeField]
         public float Speed { get; private set; }
+        
+        
+        [field: SerializeField]
+        public int Health { get; private set; }
     }
 }
