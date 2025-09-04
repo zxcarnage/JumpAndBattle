@@ -1,4 +1,5 @@
-﻿using Game.Services.Factory.Enemy.Impl;
+﻿using Game.Services.Factory.Chest.Impl;
+using Game.Services.Factory.Enemy.Impl;
 using Game.Services.Factory.Player.Impl;
 using Game.Services.Pool.Enemy.Impls;
 using Game.Services.Qte.Impl;
@@ -44,8 +45,9 @@ namespace Installers
         {
             Container.BindInterfacesAndSelfTo<PlayerFactory>()
                 .AsSingle();
-
             Container.BindInterfacesAndSelfTo<EnemyFactory>()
+                .AsSingle();
+            Container.BindInterfacesAndSelfTo<ChestFactory>()
                 .AsSingle();
         }
     }

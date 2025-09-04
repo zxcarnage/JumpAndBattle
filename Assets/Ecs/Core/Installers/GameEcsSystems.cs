@@ -39,6 +39,7 @@ namespace Ecs.Core.Installers
             container.BindInterfacesAndSelfTo<PlayerDeathSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<BossFightSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<EnemyDeathSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<WinBossFightSystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)
