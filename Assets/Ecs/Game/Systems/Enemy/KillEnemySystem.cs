@@ -4,8 +4,6 @@ using Ecs.Generated.Components;
 using Game.Services.Pool.Enemy;
 using Scellecs.Morpeh;
 using UnityEngine;
-using Utils.DebugUtil;
-using DebugUtility = Utils.DebugUtil.DebugUtility;
 
 namespace Ecs.Game.Systems.Enemy
 {

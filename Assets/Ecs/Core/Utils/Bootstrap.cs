@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ecs.Generated.Components;
 using Scellecs.Morpeh;
 using UnityEngine;
+using Utils.DebugUtil;
 using Zenject;
 
 namespace Ecs.Core.Utils
@@ -22,6 +24,8 @@ namespace Ecs.Core.Utils
             IEnumerable<IInitializer> initializeSystems
         )
         {
+            if (world == null)
+                DebugUtility.Log("World is null", UtilsColors.NotificationLightColor);
             _world = world;
             _updateSystems = updateSystems;
             _fixedUpdateSystems = fixedUpdateSystems;
@@ -32,24 +36,29 @@ namespace Ecs.Core.Utils
         public void Initialize()
         {
             var defaultGroup = _world.CreateSystemsGroup();
+            ComponentsExtensions.Build(_world);
 
             foreach (var initializeSystem in _initializeSystems)
             {
+                initializeSystem.World = _world;
                 defaultGroup.AddInitializer(initializeSystem);
             }
             
             foreach (var updateSystem in _updateSystems)
             {
+                updateSystem.World = _world;
                 defaultGroup.AddSystem(updateSystem);
             }
  
             foreach (var fixedUpdateSystem in _fixedUpdateSystems)
             {
+                fixedUpdateSystem.World = _world;
                 defaultGroup.AddSystem(fixedUpdateSystem);
             }
  
             foreach (var cleanUpSystem in _cleanUpSystems)
             {
+                cleanUpSystem.World = _world;
                 defaultGroup.AddSystem(cleanUpSystem);
             }
             

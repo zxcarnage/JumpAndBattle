@@ -3,7 +3,6 @@ using Ecs.Game.Components.Timer;
 using Ecs.Generated.Components;
 using Game.Services.Factory.Enemy;
 using Scellecs.Morpeh;
-using Utils.DebugUtil;
 using Utils.Enemy;
 
 namespace Ecs.Game.Systems.Spawn
@@ -16,7 +15,7 @@ namespace Ecs.Game.Systems.Spawn
         public World World { get; set; }
 
         public EnemySpawnSystem(
-            IEnemyFactory enemyFactory    
+            IEnemyFactory enemyFactory
         )
         {
             _enemyFactory = enemyFactory;
