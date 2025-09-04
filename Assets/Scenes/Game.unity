@@ -550,11 +550,79 @@ Transform:
   m_GameObject: {fileID: 558103268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0, z: 0}
+  m_LocalPosition: {x: -0.05624999, y: 0, z: 0.22222224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 295052666}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &649954177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649954180}
+  - component: {fileID: 649954179}
+  - component: {fileID: 649954178}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &649954178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649954177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &649954179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649954177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &649954180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649954177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964730542
 GameObject:
@@ -581,7 +649,7 @@ Transform:
   m_GameObject: {fileID: 964730542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33125, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1375, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -731,10 +799,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2638804184983184554, guid: b1807b3f8589fbc49a40070d4c7eab26, type: 3}
-      propertyPath: _installerPrefabs.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1564222338523636430, guid: b1807b3f8589fbc49a40070d4c7eab26, type: 3}
       propertyPath: m_Name
       value: GameContext
@@ -1248,61 +1312,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <OutputCamera>k__BackingField
+      value: 
+      objectReference: {fileID: 1505438971}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <PlayerCamera>k__BackingField
       value: 
       objectReference: {fileID: 1505438969}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <CinemachineBrain>k__BackingField
+      value: 
+      objectReference: {fileID: 33579428}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <PlayerSpawnPoint>k__BackingField
       value: 
       objectReference: {fileID: 1265199381}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].Delay
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].Delay
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].Delay
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].SpawnSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].SpawnSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].SpawnSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].MovementSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].SpawnPosition
       value: 
       objectReference: {fileID: 1566948768196867605}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].MovementSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].SpawnPosition
       value: 
       objectReference: {fileID: 456395437}
-    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
-      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].MovementSpeed
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].SpawnPosition
       value: 
@@ -1441,3 +1473,4 @@ SceneRoots:
   - {fileID: 1639874213714103335}
   - {fileID: 1505438970}
   - {fileID: 1265199381}
+  - {fileID: 649954180}

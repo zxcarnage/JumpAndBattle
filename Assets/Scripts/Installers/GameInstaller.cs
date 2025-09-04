@@ -1,7 +1,9 @@
 ﻿using Game.Services.Factory.Enemy.Impl;
 using Game.Services.Factory.Player.Impl;
 using Game.Services.Pool.Enemy.Impls;
+using Game.Services.Qte.Impl;
 using Game.Views;
+using KoboldUi.Services.WindowsService.Impl;
 using UnityEngine;
 using Utils.Providers.GameField.Impl;
 using Zenject;
@@ -31,6 +33,10 @@ namespace Installers
         private void BindServices()
         {
             Container.BindInterfacesAndSelfTo<EnemyPool>()
+                .AsSingle();
+            Container.BindInterfacesAndSelfTo<BossFightService>()
+                .AsSingle();
+            Container.BindInterfacesAndSelfTo<LocalWindowsService>()
                 .AsSingle();
         }
 

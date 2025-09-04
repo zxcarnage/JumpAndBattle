@@ -1,5 +1,6 @@
 ﻿using System;
 using Game.Services.Factory.Enemy;
+using Game.Services.Qte;
 using R3;
 using R3.Triggers;
 using UnityEngine;
@@ -19,12 +20,15 @@ namespace Game.Views.BossRoad
         private Collider _enterTrigger;
 
         private IEnemyFactory _enemyFactory;
+        private IBossFightService _bossFightService;
 
         [Inject]
         private void Construct(
-            IEnemyFactory enemyFactory    
+            IEnemyFactory enemyFactory,
+            IBossFightService bossFightService
         )
         {
+            _bossFightService = bossFightService;
             _enemyFactory = enemyFactory;
         }
 
@@ -40,10 +44,14 @@ namespace Game.Views.BossRoad
             if (!other.IsOnLayer(LayerMask.Player))
                 return;
 
+            _enterTrigger.enabled = false;
+            
             foreach (var spawnPoint in _enemySpawnPoints)
             {
                 _enemyFactory.CreateBossEnemy(EEnemyType.Boss, spawnPoint.position);
             }
+            
+            _bossFightService.StartFight();
         }
     }
 }
