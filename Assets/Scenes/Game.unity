@@ -323,6 +323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556649906}
     m_Modifications:
+    - target: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6425470561453787140, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
       propertyPath: m_Name
       value: Road (2)
@@ -377,6 +381,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8659862298277875544, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
   m_PrefabInstance: {fileID: 436759094}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &436759096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+  m_PrefabInstance: {fileID: 436759094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &456395435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -385,6 +394,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556649906}
     m_Modifications:
+    - target: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6425470561453787140, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
       propertyPath: m_Name
       value: Road (1)
@@ -437,6 +450,11 @@ PrefabInstance:
 --- !u!4 &456395436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8659862298277875544, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+  m_PrefabInstance: {fileID: 456395435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &456395437 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
   m_PrefabInstance: {fileID: 456395435}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &556649905
@@ -966,6 +984,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556649906}
     m_Modifications:
+    - target: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6425470561453787140, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
       propertyPath: m_Name
       value: Road
@@ -1018,6 +1040,11 @@ PrefabInstance:
 --- !u!4 &1566948768196867604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8659862298277875544, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
+  m_PrefabInstance: {fileID: 1566948768196867603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1566948768196867605 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5317001180539719736, guid: e8466ecf7107a9d47a23181f9825a4a2, type: 3}
   m_PrefabInstance: {fileID: 1566948768196867603}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1639874213714103335
@@ -1076,6 +1103,58 @@ PrefabInstance:
       propertyPath: <PlayerSpawnPoint>k__BackingField
       value: 
       objectReference: {fileID: 1265199381}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].Delay
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].Delay
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].Delay
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].SpawnSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].SpawnSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].SpawnSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].MovementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[0].SpawnPosition
+      value: 
+      objectReference: {fileID: 1566948768196867605}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].MovementSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[1].SpawnPosition
+      value: 
+      objectReference: {fileID: 456395437}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].MovementSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926186820221505286, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
+      propertyPath: <EnemiesSpawnPoints>k__BackingField.Array.data[2].SpawnPosition
+      value: 
+      objectReference: {fileID: 436759096}
     - target: {fileID: 6473064017176429976, guid: 35614278efc6bfd4d967552a02a77601, type: 3}
       propertyPath: m_Name
       value: GameField

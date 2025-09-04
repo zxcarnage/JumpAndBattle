@@ -1,6 +1,7 @@
 ﻿using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Input;
 using Ecs.Game.Systems.Movement;
+using Ecs.Game.Systems.Spawn;
 using Zenject;
 
 namespace Ecs.Core.Installers
@@ -18,6 +19,7 @@ namespace Ecs.Core.Installers
         {
             container.BindInterfacesAndSelfTo<InputInitializeSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<PlayerInitializeSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<RoadsInitializeSystem>().AsSingle();
         }
 
         private static void High(DiContainer container)
@@ -28,6 +30,8 @@ namespace Ecs.Core.Installers
         private static void Normal(DiContainer container)
         {
             container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<EnemySpawnSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<EnemyMovementSystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)

@@ -1,4 +1,6 @@
-﻿using Game.Services.Factory.Player.Impl;
+﻿using Game.Services.Factory.Enemy.Impl;
+using Game.Services.Factory.Player.Impl;
+using Game.Services.Pool.Enemy.Impls;
 using Game.Views;
 using UnityEngine;
 using Utils.Providers.GameField.Impl;
@@ -22,7 +24,22 @@ namespace Installers
                 .FromInstance(gameFieldProvider)
                 .AsSingle();
 
+            BindFactories();
+            BindServices();
+        }
+
+        private void BindServices()
+        {
+            Container.BindInterfacesAndSelfTo<EnemyPool>()
+                .AsSingle();
+        }
+
+        private void BindFactories()
+        {
             Container.BindInterfacesAndSelfTo<PlayerFactory>()
+                .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<EnemyFactory>()
                 .AsSingle();
         }
     }
