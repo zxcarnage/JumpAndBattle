@@ -49,7 +49,7 @@ namespace Ecs.Game.Systems.Enemy
                 var enemyView = enemyEntity.GetEnemyComponent().Value;
                 
                 _enemyPool.DespawnEnemy(enemyType, enemyView);
-                enemyEntity.Dispose();
+                World.RemoveEntity(enemyEntity);
             }
         }
 
