@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace Db.Ui.BossFight
+namespace Db.Ui.BossFight.Impl
 {
     [CreateAssetMenu(menuName = "Settings/" + nameof(BossFightUiParameters), fileName = nameof(BossFightUiParameters))]
     public class BossFightUiParameters : ScriptableObject, IBossFightUiParameters

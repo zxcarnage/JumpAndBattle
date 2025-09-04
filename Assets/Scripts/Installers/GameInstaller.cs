@@ -47,7 +47,7 @@ namespace Installers
                 .AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyFactory>()
                 .AsSingle();
-            Container.BindInterfacesAndSelfTo<ChestFactory>()
+            Container.BindInterfacesAndSelfTo<SimpleFactory>()
                 .AsSingle();
         }
     }

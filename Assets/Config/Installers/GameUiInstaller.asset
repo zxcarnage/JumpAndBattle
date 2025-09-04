@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 4053905212220017250, guid: b7f2e7cfb5b824b4eb77e92e6ca4f1da, type: 3}
   _bossFightUiWindow: {fileID: 4899691874640436941, guid: 20a15ce7ab461e248bd4b7d0df469ce7, type: 3}
+  _treasureWindow: {fileID: 8154253421254048262, guid: 32961872e6b193d4dbdebde243d727be, type: 3}
