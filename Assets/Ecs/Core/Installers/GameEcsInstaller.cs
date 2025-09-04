@@ -8,7 +8,7 @@ namespace Ecs.Core.Installers
     {
         public override void InstallBindings()
         {
-            var world = World.Default;
+            var world = World.Create();
 
             Container.Bind<World>()
                 .FromInstance(world)

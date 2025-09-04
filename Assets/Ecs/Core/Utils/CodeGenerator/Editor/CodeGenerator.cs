@@ -53,84 +53,93 @@ namespace Ecs.Core.Utils.CodeGenerator.Editor
                     AssetDatabase.Refresh();
                 }
 
-                int generatedCount = 0;
-                foreach (var componentType in componentTypes)
+                var outputFile = Path.Combine(generatedPath, "ComponentsExtensions.cs");
+                try
                 {
-                    if (GenerateExtensionCode(componentType, generatedPath))
+                    var oldFiles = Directory.GetFiles(generatedPath, "*Extensions.cs");
+                    foreach (var old in oldFiles)
                     {
-                        generatedCount++;
+                        if (!string.Equals(old, outputFile, StringComparison.OrdinalIgnoreCase))
+                        {
+                            File.Delete(old);
+                        }
                     }
                 }
+                catch (Exception cleanupEx)
+                {
+                    Debug.LogWarning($"Cleanup of old extension files failed: {cleanupEx.Message}");
+                }
 
+                var uniqueNamespaces = componentTypes
+                    .Select(t => t.Namespace)
+                    .Where(ns => !string.IsNullOrEmpty(ns))
+                    .Distinct()
+                    .OrderBy(ns => ns)
+                    .ToList();
+
+                var writer = new System.Text.StringBuilder();
+                writer.AppendLine("using Scellecs.Morpeh;");
+                foreach (var ns in uniqueNamespaces)
+                {
+                    writer.Append("using ").Append(ns).AppendLine(";");
+                }
+                writer.AppendLine();
+                writer.AppendLine("namespace Ecs.Generated.Components");
+                writer.AppendLine("{");
+                writer.AppendLine("    public static class ComponentsExtensions");
+                writer.AppendLine("    {");
+                writer.AppendLine("        private static World _world;");
+                writer.AppendLine();
+                writer.AppendLine("        public static void Build(World world)");
+                writer.AppendLine("        {");
+                writer.AppendLine("            _world = world;");
+                writer.AppendLine("        }");
+                writer.AppendLine();
+
+                foreach (var componentType in componentTypes.OrderBy(t => t.Name))
+                {
+                    var componentName = componentType.Name;
+                    writer.Append("        public static Entity Add").Append(componentName).Append("(this Entity entity, ").Append(componentType.Name).AppendLine(" component)");
+                    writer.AppendLine("        {");
+                    writer.Append("            _world.GetStash<").Append(componentType.Name).AppendLine(">().Add(entity, component);");
+                    writer.AppendLine("            return entity;");
+                    writer.AppendLine("        }");
+                    writer.AppendLine();
+                    writer.Append("        public static Entity Set").Append(componentName).Append("(this Entity entity, ").Append(componentType.Name).AppendLine(" component)");
+                    writer.AppendLine("        {");
+                    writer.Append("            _world.GetStash<").Append(componentType.Name).AppendLine(">().Set(entity, component);");
+                    writer.AppendLine("            return entity;");
+                    writer.AppendLine("        }");
+                    writer.AppendLine();
+                    writer.Append("        public static Entity Remove").Append(componentName).AppendLine("(this Entity entity)");
+                    writer.AppendLine("        {");
+                    writer.Append("            _world.GetStash<").Append(componentType.Name).AppendLine(">().Remove(entity);");
+                    writer.AppendLine("            return entity;");
+                    writer.AppendLine("        }");
+                    writer.AppendLine();
+                    writer.Append("        public static bool Has").Append(componentName).AppendLine("(this Entity entity)");
+                    writer.AppendLine("        {");
+                    writer.Append("            return _world.GetStash<").Append(componentType.Name).AppendLine(">().Has(entity);");
+                    writer.AppendLine("        }");
+                    writer.AppendLine();
+                    writer.Append("        public static ").Append(componentType.Name).Append(" Get").Append(componentName).AppendLine("(this Entity entity)");
+                    writer.AppendLine("        {");
+                    writer.Append("            return _world.GetStash<").Append(componentType.Name).AppendLine(">().Get(entity);");
+                    writer.AppendLine("        }");
+                    writer.AppendLine();
+                }
+
+                writer.AppendLine("    }");
+                writer.AppendLine("}");
+
+                File.WriteAllText(outputFile, writer.ToString());
                 AssetDatabase.Refresh();
-                Debug.Log($"Successfully generated {generatedCount} component extensions in {generatedPath}");
+                Debug.Log($"Successfully generated component extensions in single file: {outputFile}");
             }
             catch (Exception e)
             {
                 Debug.LogError($"Error generating extensions: {e.Message}");
             }
-        }
-
-        private bool GenerateExtensionCode(Type componentType, string outputPath)
-        {
-            try
-            {
-                var componentName = componentType.Name;
-                var fileName = $"{componentName}Extensions.cs";
-                var filePath = Path.Combine(outputPath, fileName);
-
-                var code = CreateExtensionFile(componentType, componentName);
-                File.WriteAllText(filePath, code);
-
-                return true;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Error generating extension for {componentType.Name}: {e.Message}");
-                return false;
-            }
-        }
-
-        private static string CreateExtensionFile(Type componentType, string componentName)
-        {
-            var template = $@"using Scellecs.Morpeh;
-using {componentType.Namespace};
-
-namespace Ecs.Generated.Components
-{{
-    public static class {componentName}Extensions
-    {{
-        public static Entity Add{componentName}(this Entity entity, {componentType.Name} component)
-        {{
-            World.Default.GetStash<{componentType.Name}>().Add(entity, component);
-            return entity;
-        }}
-        
-        public static Entity Set{componentName}(this Entity entity, {componentType.Name} component)
-        {{
-            World.Default.GetStash<{componentType.Name}>().Set(entity, component);
-            return entity;
-        }}
-        
-        public static Entity Remove{componentName}(this Entity entity)
-        {{
-            World.Default.GetStash<{componentType.Name}>().Remove(entity);
-            return entity;
-        }}
-        
-        public static bool Has{componentName}(this Entity entity)
-        {{
-            return World.Default.GetStash<{componentType.Name}>().Has(entity);
-        }}
-        
-        public static {componentType.Name} Get{componentName}(this Entity entity)
-        {{
-            return World.Default.GetStash<{componentType.Name}>().Get(entity);
-        }}
-    }}
-}}";
-            
-            return template;
         }
     }
 }
