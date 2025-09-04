@@ -1,4 +1,5 @@
-﻿using Ecs.Game.Systems.Initialize;
+﻿using Ecs.Game.Systems.Enemy;
+using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Input;
 using Ecs.Game.Systems.Movement;
 using Ecs.Game.Systems.Spawn;
@@ -32,6 +33,7 @@ namespace Ecs.Core.Installers
             container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<EnemySpawnSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<EnemyMovementSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<KillEnemySystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)

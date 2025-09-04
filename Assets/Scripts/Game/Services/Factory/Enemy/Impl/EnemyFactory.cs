@@ -39,7 +39,19 @@ namespace Game.Services.Factory.Enemy.Impl
                 }
             );
 
-            enemyEntity.AddEnemyComponent(new EnemyComponent());
+            enemyEntity.AddEnemyComponent(
+                new EnemyComponent()
+                {
+                    Value = enemyView,
+                }
+            );
+
+            enemyEntity.AddEnemyTypeComponent(
+                new EnemyTypeComponent()
+                {
+                    Value = enemyType,
+                }
+            );
 
             enemyEntity.AddTransformComponent(
                 new TransformComponent()
@@ -68,9 +80,14 @@ namespace Game.Services.Factory.Enemy.Impl
                     Value = nodeData.MovementSpeed,
                 }
             );
-            
-            
 
+            enemyEntity.AddEnemyStartPosition(
+                new EnemyStartPosition()
+                {
+                    Value = nodeData.SpawnPosition.position,
+                }
+            );
+            
             return enemyView;
         }
     }
