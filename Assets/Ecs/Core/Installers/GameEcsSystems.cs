@@ -31,6 +31,7 @@ namespace Ecs.Core.Installers
         {
             container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<EnemySpawnSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<EnemyMovementSystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)

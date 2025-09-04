@@ -7,6 +7,7 @@ using Scellecs.Morpeh;
 using UnityEngine;
 using Utils;
 using Utils.Enemy;
+using Utils.SpawnNode;
 
 namespace Game.Services.Factory.Enemy.Impl
 {
@@ -24,10 +25,10 @@ namespace Game.Services.Factory.Enemy.Impl
             _enemyPool = enemyPool;
         }
         
-        public EnemyView CreateEnemy(EEnemyType enemyType, Vector3 position)
+        public EnemyView CreateEnemy(EEnemyType enemyType, SpawnNodeData nodeData)
         {
             var enemyView = _enemyPool.SpawnEnemy(enemyType);
-            enemyView.transform.position = position;
+            enemyView.transform.position = nodeData.SpawnPosition.position;
             
             var enemyEntity = _world.CreateEntity();
 
@@ -60,6 +61,15 @@ namespace Game.Services.Factory.Enemy.Impl
                     Value = ConstValues.ENEMY_HEALTH,
                 }
             );
+
+            enemyEntity.AddSpeedComponent(
+                new SpeedComponent()
+                {
+                    Value = nodeData.MovementSpeed,
+                }
+            );
+            
+            
 
             return enemyView;
         }

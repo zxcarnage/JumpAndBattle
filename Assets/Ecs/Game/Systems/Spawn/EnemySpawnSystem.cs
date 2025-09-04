@@ -3,6 +3,7 @@ using Ecs.Game.Components.Timer;
 using Ecs.Generated.Components;
 using Game.Services.Factory.Enemy;
 using Scellecs.Morpeh;
+using Utils.DebugUtil;
 using Utils.Enemy;
 
 namespace Ecs.Game.Systems.Spawn
@@ -40,10 +41,10 @@ namespace Ecs.Game.Systems.Spawn
                 if (timer < nodeData.Delay)
                 {
                     road.SetTimerComponent(new TimerComponent() { Value = timer, });
-                    return;
+                    continue;
                 }
 
-                _enemyFactory.CreateEnemy(EEnemyType.Common, nodeData.SpawnPosition.position);
+                _enemyFactory.CreateEnemy(EEnemyType.Common, nodeData);
                 road.SetTimerComponent(new TimerComponent() { Value = 0f, });
             }
         }
