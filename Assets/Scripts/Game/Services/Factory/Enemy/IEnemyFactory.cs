@@ -8,5 +8,6 @@ namespace Game.Services.Factory.Enemy
     public interface IEnemyFactory
     {
         EnemyView CreateEnemy(EEnemyType enemyType, SpawnNodeData nodeData);
+        EnemyView CreateBossEnemy(EEnemyType enemyType, Vector3 position);
     }
 }

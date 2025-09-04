@@ -16,6 +16,34 @@ namespace Ecs.Generated.Components
             _world = world;
         }
 
+        public static Entity AddBossEnemyComponent(this Entity entity, BossEnemyComponent component)
+        {
+            _world.GetStash<BossEnemyComponent>().Add(entity, component);
+            return entity;
+        }
+
+        public static Entity SetBossEnemyComponent(this Entity entity, BossEnemyComponent component)
+        {
+            _world.GetStash<BossEnemyComponent>().Set(entity, component);
+            return entity;
+        }
+
+        public static Entity RemoveBossEnemyComponent(this Entity entity)
+        {
+            _world.GetStash<BossEnemyComponent>().Remove(entity);
+            return entity;
+        }
+
+        public static bool HasBossEnemyComponent(this Entity entity)
+        {
+            return _world.GetStash<BossEnemyComponent>().Has(entity);
+        }
+
+        public static BossEnemyComponent GetBossEnemyComponent(this Entity entity)
+        {
+            return _world.GetStash<BossEnemyComponent>().Get(entity);
+        }
+
         public static Entity AddColliderComponent(this Entity entity, ColliderComponent component)
         {
             _world.GetStash<ColliderComponent>().Add(entity, component);

@@ -18,6 +18,7 @@ namespace Installers
         [SerializeField] private EnemyBase _enemyBase;
         [SerializeField] private PlayerBasicParameters _playerBasicParameters;
         [SerializeField] private EnemyParameters _enemyParameters;
+        [SerializeField] private BossEnemyParameters _bossEnemyParameters;
 
         public override void InstallBindings()
         {
@@ -25,6 +26,7 @@ namespace Installers
             Container.Bind<IPlayerBasicParameters>().FromInstance(_playerBasicParameters).AsSingle();
             Container.Bind<IEnemyBase>().FromInstance(_enemyBase).AsSingle();
             Container.Bind<IEnemyParameters>().FromInstance(_enemyParameters).AsSingle();
+            Container.Bind<IBossEnemyParameters>().FromInstance(_bossEnemyParameters).AsSingle();
         }
     }
 }
