@@ -1,14 +1,14 @@
 ﻿using System;
 using Ecs.Core.Utils.CodeGenerator;
-using Game.Views.Enemy;
 using Scellecs.Morpeh;
+using UnityEngine;
 
 namespace Ecs.Game.Components.Enemy
 {
     [Serializable]
     [Generate]
-    public struct EnemyComponent : IComponent
+    public struct EnemyStartPosition : IComponent
     {
-        public EnemyView Value;
+        public Vector3 Value;
     }
 }

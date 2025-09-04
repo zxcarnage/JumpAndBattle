@@ -636,6 +636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2638804184983184554, guid: b1807b3f8589fbc49a40070d4c7eab26, type: 3}
+      propertyPath: _installerPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1564222338523636430, guid: b1807b3f8589fbc49a40070d4c7eab26, type: 3}
       propertyPath: m_Name
       value: GameContext
