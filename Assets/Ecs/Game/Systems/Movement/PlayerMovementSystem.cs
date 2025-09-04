@@ -44,6 +44,9 @@ namespace Ecs.Game.Systems.Movement
 
             void HandleMovement()
             {
+                if (playerEntity.HasMovementBlockedComponent())
+                    return;
+                
                 var direction = playerEntity.GetMoveDirectionComponent().Value;
                 var rigidbody = playerEntity.GetRigidbodyComponent().Value;
                 var transform = playerEntity.GetTransformComponent().Value;

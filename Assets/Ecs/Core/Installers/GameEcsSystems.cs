@@ -1,4 +1,5 @@
-﻿using Ecs.Game.Systems.Death;
+﻿using Ecs.Game.Systems.BossFight;
+using Ecs.Game.Systems.Death;
 using Ecs.Game.Systems.Enemy;
 using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Input;
@@ -36,6 +37,9 @@ namespace Ecs.Core.Installers
             container.BindInterfacesAndSelfTo<EnemyMovementSystem>().AsSingle();
             container.BindInterfacesAndSelfTo<KillEnemySystem>().AsSingle();
             container.BindInterfacesAndSelfTo<PlayerDeathSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<BossFightSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<EnemyDeathSystem>().AsSingle();
+            container.BindInterfacesAndSelfTo<WinBossFightSystem>().AsSingle();
         }
 
         private static void Low(DiContainer container)

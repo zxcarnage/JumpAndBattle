@@ -16,6 +16,34 @@ namespace Ecs.Generated.Components
             _world = world;
         }
 
+        public static Entity AddBossEnemyComponent(this Entity entity, BossEnemyComponent component)
+        {
+            _world.GetStash<BossEnemyComponent>().Add(entity, component);
+            return entity;
+        }
+
+        public static Entity SetBossEnemyComponent(this Entity entity, BossEnemyComponent component)
+        {
+            _world.GetStash<BossEnemyComponent>().Set(entity, component);
+            return entity;
+        }
+
+        public static Entity RemoveBossEnemyComponent(this Entity entity)
+        {
+            _world.GetStash<BossEnemyComponent>().Remove(entity);
+            return entity;
+        }
+
+        public static bool HasBossEnemyComponent(this Entity entity)
+        {
+            return _world.GetStash<BossEnemyComponent>().Has(entity);
+        }
+
+        public static BossEnemyComponent GetBossEnemyComponent(this Entity entity)
+        {
+            return _world.GetStash<BossEnemyComponent>().Get(entity);
+        }
+
         public static Entity AddColliderComponent(this Entity entity, ColliderComponent component)
         {
             _world.GetStash<ColliderComponent>().Add(entity, component);
@@ -70,6 +98,34 @@ namespace Ecs.Generated.Components
         public static DeathComponent GetDeathComponent(this Entity entity)
         {
             return _world.GetStash<DeathComponent>().Get(entity);
+        }
+
+        public static Entity AddEnableTapShootingComponent(this Entity entity, EnableTapShootingComponent component)
+        {
+            _world.GetStash<EnableTapShootingComponent>().Add(entity, component);
+            return entity;
+        }
+
+        public static Entity SetEnableTapShootingComponent(this Entity entity, EnableTapShootingComponent component)
+        {
+            _world.GetStash<EnableTapShootingComponent>().Set(entity, component);
+            return entity;
+        }
+
+        public static Entity RemoveEnableTapShootingComponent(this Entity entity)
+        {
+            _world.GetStash<EnableTapShootingComponent>().Remove(entity);
+            return entity;
+        }
+
+        public static bool HasEnableTapShootingComponent(this Entity entity)
+        {
+            return _world.GetStash<EnableTapShootingComponent>().Has(entity);
+        }
+
+        public static EnableTapShootingComponent GetEnableTapShootingComponent(this Entity entity)
+        {
+            return _world.GetStash<EnableTapShootingComponent>().Get(entity);
         }
 
         public static Entity AddEnemyComponent(this Entity entity, EnemyComponent component)
@@ -266,6 +322,34 @@ namespace Ecs.Generated.Components
         public static MoveDirectionComponent GetMoveDirectionComponent(this Entity entity)
         {
             return _world.GetStash<MoveDirectionComponent>().Get(entity);
+        }
+
+        public static Entity AddMovementBlockedComponent(this Entity entity, MovementBlockedComponent component)
+        {
+            _world.GetStash<MovementBlockedComponent>().Add(entity, component);
+            return entity;
+        }
+
+        public static Entity SetMovementBlockedComponent(this Entity entity, MovementBlockedComponent component)
+        {
+            _world.GetStash<MovementBlockedComponent>().Set(entity, component);
+            return entity;
+        }
+
+        public static Entity RemoveMovementBlockedComponent(this Entity entity)
+        {
+            _world.GetStash<MovementBlockedComponent>().Remove(entity);
+            return entity;
+        }
+
+        public static bool HasMovementBlockedComponent(this Entity entity)
+        {
+            return _world.GetStash<MovementBlockedComponent>().Has(entity);
+        }
+
+        public static MovementBlockedComponent GetMovementBlockedComponent(this Entity entity)
+        {
+            return _world.GetStash<MovementBlockedComponent>().Get(entity);
         }
 
         public static Entity AddPlayerComponent(this Entity entity, PlayerComponent component)

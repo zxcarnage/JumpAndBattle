@@ -1,4 +1,5 @@
-﻿using Ecs.Game.Components.Character;
+﻿using Db.Enemy;
+using Ecs.Game.Components.Character;
 using Ecs.Game.Components.Enemy;
 using Ecs.Generated.Components;
 using Game.Services.Pool.Enemy;
@@ -15,14 +16,17 @@ namespace Game.Services.Factory.Enemy.Impl
     {
         private readonly World _world;
         private readonly IEnemyPool _enemyPool;
+        private readonly IBossEnemyParameters _bossParameters;
 
         public EnemyFactory(
             World world,
-            IEnemyPool enemyPool
+            IEnemyPool enemyPool,
+            IBossEnemyParameters bossParameters
         )
         {
             _world = world;
             _enemyPool = enemyPool;
+            _bossParameters = bossParameters;
         }
         
         public EnemyView CreateEnemy(EEnemyType enemyType, SpawnNodeData nodeData)
@@ -85,6 +89,65 @@ namespace Game.Services.Factory.Enemy.Impl
                 new EnemyStartPosition()
                 {
                     Value = nodeData.SpawnPosition.position,
+                }
+            );
+            
+            return enemyView;
+        }
+
+        public EnemyView CreateBossEnemy(EEnemyType enemyType, Vector3 position)
+        {
+            var enemyView = _enemyPool.SpawnEnemy(enemyType);
+            enemyView.transform.position = position;
+            
+            var enemyEntity = _world.CreateEntity();
+
+            enemyEntity.AddColliderComponent(
+                new ColliderComponent()
+                {
+                    Value = enemyView.Collider,
+                }
+            );
+
+            enemyEntity.AddBossEnemyComponent(
+                new BossEnemyComponent()
+                {
+                    Value = enemyView,
+                }
+            );
+
+            enemyEntity.AddEnemyTypeComponent(
+                new EnemyTypeComponent()
+                {
+                    Value = enemyType,
+                }
+            );
+
+            enemyEntity.AddTransformComponent(
+                new TransformComponent()
+                {
+                    Value = enemyView.Transform,
+                }
+            );
+
+            enemyEntity.AddRigidbodyComponent(
+                new RigidbodyComponent()
+                {
+                    Value = enemyView.Rigidbody,
+                }
+            );
+
+            enemyEntity.AddHealthComponent(
+                new HealthComponent()
+                {
+                    Value = ConstValues.ENEMY_HEALTH,
+                }
+            );
+
+            enemyEntity.AddSpeedComponent(
+                new SpeedComponent()
+                {
+                    Value = _bossParameters.BossDatas[enemyType].Speed,
                 }
             );
             

@@ -11,6 +11,9 @@ namespace Game.Views
 
         [field: SerializeField]
         public CinemachineVirtualCamera PlayerCamera { get; private set; }
+        
+        [field: SerializeField]
+        public Camera OutputCamera { get; private set; }
 
         [field: SerializeField]
         public SpawnNodeData[] EnemiesSpawnPoints { get; private set; }

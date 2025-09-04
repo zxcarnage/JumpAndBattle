@@ -45,3 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerSpawnPoint>k__BackingField: {fileID: 0}
+  <PlayerCamera>k__BackingField: {fileID: 0}
+  <CinemachineBrain>k__BackingField: {fileID: 0}
+  <EnemiesSpawnPoints>k__BackingField:
+  - SpawnPosition: {fileID: 0}
+    Delay: 6
+    MovementSpeed: 15
+  - SpawnPosition: {fileID: 0}
+    Delay: 7
+    MovementSpeed: 8
+  - SpawnPosition: {fileID: 0}
+    Delay: 8
+    MovementSpeed: 9

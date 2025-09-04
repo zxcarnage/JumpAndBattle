@@ -15,3 +15,5 @@ MonoBehaviour:
   _prefabs:
   - Name: Player
     GameObject: {fileID: 7975388957883027104, guid: f8d0b3a09a8540b498de4bec90f72ca5, type: 3}
+  - Name: TreasureChest
+    GameObject: {fileID: 1021991772912824786, guid: 431c48adb58b26e4baa8bd960f9e1fe0, type: 3}
