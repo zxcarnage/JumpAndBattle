@@ -241,7 +241,7 @@ MonoBehaviour:
   _openAnimation: {fileID: 8877158402968206749}
   _closeAnimation: {fileID: 8877158402968206749}
   DestinationView: {fileID: 3101683763223892721}
-  KeyParent: {fileID: 0}
+  KeyParent: {fileID: 5776593742402112267}
 --- !u!225 &8520081822777592198
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _needWaitAnimation: 0
-  _useDefaultParameters: 1
+  _useDefaultParameters: 0
   _animationParameters: {fileID: 0}
 --- !u!1 &7842187275148444164
 GameObject:
