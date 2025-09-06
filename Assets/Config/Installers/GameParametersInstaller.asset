@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e7b227c4a0436ebd815a46642ca0ec, type: 3}
+  m_Name: GameParametersInstaller
+  m_EditorClassIdentifier: 
+  _prefabsBase: {fileID: 11400000, guid: 63d44e0de3a08114e987d822ab334f2a, type: 2}
+  _enemyBase: {fileID: 11400000, guid: 968d43518b0ad2340adc84aafc496883, type: 2}
+  _playerBasicParameters: {fileID: 11400000, guid: 30910c5899eae2347995bb9bc572e0a8, type: 2}
+  _enemyParameters: {fileID: 11400000, guid: 230bc33388ea79143b54b20dc3e0bdf7, type: 2}
+  _bossEnemyParameters: {fileID: 11400000, guid: 0579f42a9510363488c9010f6926d145, type: 2}
+  _bossFightUiParameters: {fileID: 11400000, guid: 5e95c777982eab543bc46e40e012e3e0, type: 2}
+  _treasureUiParameters: {fileID: 11400000, guid: 023016dd95d78594e92c40302168ee91, type: 2}
