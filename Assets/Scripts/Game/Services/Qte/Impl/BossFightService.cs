@@ -30,7 +30,7 @@ namespace Game.Services.Qte.Impl
             var playerEntity = _playerFilter.First();
 
             playerEntity.GetRigidbodyComponent().Value.velocity = Vector3.zero;
-            playerEntity.AddMovementBlockedComponent(new MovementBlockedComponent());
+            playerEntity.AddInBossFightComponent(new InBossFightComponent());
             playerEntity.AddEnableTapShootingComponent(new EnableTapShootingComponent());
             _localWindowsService.OpenWindow<BossFightUiWindow>();
         }

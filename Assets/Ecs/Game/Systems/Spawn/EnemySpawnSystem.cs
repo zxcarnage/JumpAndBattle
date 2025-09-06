@@ -3,6 +3,7 @@ using Ecs.Game.Components.Timer;
 using Ecs.Generated.Components;
 using Game.Services.Factory.Enemy;
 using Scellecs.Morpeh;
+using UnityEngine;
 using Utils.Enemy;
 
 namespace Ecs.Game.Systems.Spawn
@@ -35,7 +36,7 @@ namespace Ecs.Game.Systems.Spawn
                 var timer = road.GetTimerComponent().Value;
                 var nodeData = road.GetSpawnNodeComponent().Value.SpawnNodeData;
 
-                timer += deltaTime;
+                timer += deltaTime * Time.timeScale;
 
                 if (timer < nodeData.Delay)
                 {

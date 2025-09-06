@@ -30,7 +30,7 @@ namespace Ui.BossFightUi.Controller
         {
             _playerFilter = _world.Filter
                 .With<PlayerComponent>()
-                .With<MovementBlockedComponent>()
+                .With<InBossFightComponent>()
                 .Build();
             
             _countTween = View.CounterSlider

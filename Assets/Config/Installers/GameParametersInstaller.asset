@@ -18,3 +18,4 @@ MonoBehaviour:
   _enemyParameters: {fileID: 11400000, guid: 230bc33388ea79143b54b20dc3e0bdf7, type: 2}
   _bossEnemyParameters: {fileID: 11400000, guid: 0579f42a9510363488c9010f6926d145, type: 2}
   _bossFightUiParameters: {fileID: 11400000, guid: 5e95c777982eab543bc46e40e012e3e0, type: 2}
+  _treasureUiParameters: {fileID: 11400000, guid: 023016dd95d78594e92c40302168ee91, type: 2}

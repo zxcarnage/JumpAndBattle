@@ -11,7 +11,7 @@ namespace Ecs.Game.Systems.BossFight
     public sealed class WinBossFightSystem : ISystem
     {
         private readonly ILocalWindowsService _localWindowsService;
-        private readonly IChestFactory _chestFactory;
+        private readonly ISimpleFactory _simpleFactory;
         private readonly IPrefabsBase _prefabsBase;
 
         private Filter _playerInFightFilter;
@@ -21,12 +21,12 @@ namespace Ecs.Game.Systems.BossFight
 
         public WinBossFightSystem(
             ILocalWindowsService localWindowsService,
-            IChestFactory chestFactory,
+            ISimpleFactory simpleFactory,
             IPrefabsBase prefabsBase
         )
         {
             _localWindowsService = localWindowsService;
-            _chestFactory = chestFactory;
+            _simpleFactory = simpleFactory;
             _prefabsBase = prefabsBase;
         }
 
@@ -34,7 +34,7 @@ namespace Ecs.Game.Systems.BossFight
         {
             _playerInFightFilter = World.Filter
                 .With<PlayerComponent>()
-                .With<MovementBlockedComponent>()
+                .With<InBossFightComponent>()
                 .Build();
             
             _bossFilter = World.Filter
@@ -52,7 +52,7 @@ namespace Ecs.Game.Systems.BossFight
                 _localWindowsService.CloseWindow();
 
                 SpawnChest(player);
-                player.RemoveMovementBlockedComponent();
+                player.RemoveInBossFightComponent();
             }
 
             return;
@@ -67,7 +67,7 @@ namespace Ecs.Game.Systems.BossFight
 
                 var chestPrefab = _prefabsBase.Get("TreasureChest");
                 
-                _chestFactory.Spawn(chestPrefab, treasureChestPosition);
+                _simpleFactory.Spawn(chestPrefab, treasureChestPosition);
             }
         }
 

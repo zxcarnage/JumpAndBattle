@@ -7,6 +7,9 @@ using Db.EnemyBase.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.Ui.BossFight;
+using Db.Ui.BossFight.Impl;
+using Db.Ui.Treasure;
+using Db.Ui.Treasure.Impl;
 using UnityEngine;
 using Zenject;
 
@@ -21,6 +24,7 @@ namespace Installers
         [SerializeField] private EnemyParameters _enemyParameters;
         [SerializeField] private BossEnemyParameters _bossEnemyParameters;
         [SerializeField] private BossFightUiParameters _bossFightUiParameters;
+        [SerializeField] private TreasureUiParameters _treasureUiParameters;
 
         public override void InstallBindings()
         {
@@ -30,6 +34,7 @@ namespace Installers
             Container.Bind<IEnemyParameters>().FromInstance(_enemyParameters).AsSingle();
             Container.Bind<IBossEnemyParameters>().FromInstance(_bossEnemyParameters).AsSingle();
             Container.Bind<IBossFightUiParameters>().FromInstance(_bossFightUiParameters).AsSingle();
+            Container.Bind<ITreasureUiParameters>().FromInstance(_treasureUiParameters).AsSingle();
         }
     }
 }
