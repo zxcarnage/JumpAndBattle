@@ -34,7 +34,7 @@ namespace Ecs.Game.Systems.BossFight
         {
             _playerInFightFilter = World.Filter
                 .With<PlayerComponent>()
-                .With<MovementBlockedComponent>()
+                .With<InBossFightComponent>()
                 .Build();
             
             _bossFilter = World.Filter
@@ -52,7 +52,7 @@ namespace Ecs.Game.Systems.BossFight
                 _localWindowsService.CloseWindow();
 
                 SpawnChest(player);
-                player.RemoveMovementBlockedComponent();
+                player.RemoveInBossFightComponent();
             }
 
             return;

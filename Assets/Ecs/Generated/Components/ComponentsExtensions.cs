@@ -268,6 +268,34 @@ namespace Ecs.Generated.Components
             return _world.GetStash<HitComponent>().Get(entity);
         }
 
+        public static Entity AddInBossFightComponent(this Entity entity, InBossFightComponent component)
+        {
+            _world.GetStash<InBossFightComponent>().Add(entity, component);
+            return entity;
+        }
+
+        public static Entity SetInBossFightComponent(this Entity entity, InBossFightComponent component)
+        {
+            _world.GetStash<InBossFightComponent>().Set(entity, component);
+            return entity;
+        }
+
+        public static Entity RemoveInBossFightComponent(this Entity entity)
+        {
+            _world.GetStash<InBossFightComponent>().Remove(entity);
+            return entity;
+        }
+
+        public static bool HasInBossFightComponent(this Entity entity)
+        {
+            return _world.GetStash<InBossFightComponent>().Has(entity);
+        }
+
+        public static InBossFightComponent GetInBossFightComponent(this Entity entity)
+        {
+            return _world.GetStash<InBossFightComponent>().Get(entity);
+        }
+
         public static Entity AddMaxHealthComponent(this Entity entity, MaxHealthComponent component)
         {
             _world.GetStash<MaxHealthComponent>().Add(entity, component);

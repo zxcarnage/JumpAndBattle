@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8490959061270981993}
   - component: {fileID: 6823540587619710641}
+  - component: {fileID: 9032683665391859534}
   m_Layer: 5
   m_Name: KeyItem
   m_TagString: Untagged
@@ -49,7 +50,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341006e5511b4df594ecffb8223e3986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Image>k__BackingField: {fileID: 6689832949613213622}
+  _image: {fileID: 6689832949613213622}
+  _rectTransform: {fileID: 2028464585213729536}
+  _canvasGroup: {fileID: 9032683665391859534}
+--- !u!225 &9032683665391859534
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831365780222573634}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8394517619107260394
 GameObject:
   m_ObjectHideFlags: 0

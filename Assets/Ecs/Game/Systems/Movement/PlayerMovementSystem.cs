@@ -44,7 +44,7 @@ namespace Ecs.Game.Systems.Movement
 
             void HandleMovement()
             {
-                if (playerEntity.HasMovementBlockedComponent())
+                if (playerEntity.HasMovementBlockedComponent() || playerEntity.HasInBossFightComponent())
                     return;
                 
                 var direction = playerEntity.GetMoveDirectionComponent().Value;
