@@ -73,8 +73,6 @@ namespace Ecs.Game.Systems.BossFight
                 if (hitCollider == bossCollider)
                     return bossEntity;
             }
-
-            DebugUtility.Log($"No boss entity found for collider {hitCollider.name}", UtilsColors.ErrorColor);
             
             return null;
         }

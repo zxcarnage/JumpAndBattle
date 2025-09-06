@@ -57,9 +57,11 @@ namespace Ui.TreasureUi.View
             _keysCount++;
             UpdateText();
 
-            if (_keysCount == ConstValues.KEY_WIN_CONDITION)
-                SceneManager.LoadScene(1); //TODO: ONLY PROTOTYPE AS WITH PLAYER DEATH
+            if (_keysCount != ConstValues.KEY_WIN_CONDITION) 
+                return;
 
+            Time.timeScale = 1;
+            SceneManager.LoadScene(1); //TODO: ONLY PROTOTYPE AS WITH PLAYER DEATH
         }
 
         private void UpdateText()

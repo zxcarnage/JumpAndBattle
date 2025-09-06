@@ -24,8 +24,6 @@ namespace Ecs.Core.Utils
             IEnumerable<IInitializer> initializeSystems
         )
         {
-            if (world == null)
-                DebugUtility.Log("World is null", UtilsColors.NotificationLightColor);
             _world = world;
             _updateSystems = updateSystems;
             _fixedUpdateSystems = fixedUpdateSystems;
